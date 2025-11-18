@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Chess lessons application"
+    />
+    <title>Chess Lessons</title>
+    <link href="https://c2a.chesstempo.com/pgnviewer/v2.5/pgnviewerext.vers1.css" media="all" rel="stylesheet" crossorigin>
+    <script defer language="javascript" src="https://c1a.chesstempo.com/pgnviewer/v2.5/pgnviewerext.bundle.vers1.js" crossorigin></script>
+    <link
+      href="https://c1a.chesstempo.com/fonts/MaterialIcons-Regular.woff2"
+      rel="stylesheet" crossorigin>
+    <link href="/styles/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <div class="container">
+      <header>
+        <h1>Chess Puzzle Trainer</h1>
+      </header>
+
+      <div class="main-content">
+        <div class="chess-panel">
+          <div class="navigation">
+            <button id="prev-btn" class="nav-btn">← Previous</button>
+            <span id="puzzle-counter">Loading...</span>
+            <button id="next-btn" class="nav-btn">Next →</button>
+          </div>
+
+          <ct-pgn-viewer>
+[Result "*"]
+[Event "Loading..."]
+
+Loading puzzle...
+          </ct-pgn-viewer>
+
+          <div class="keyboard-hint">
+            Tip: Use ← → arrow keys to navigate
+          </div>
+        </div>
+
+        <aside class="info-panel" id="puzzle-info">
+          <h2>Puzzle Information</h2>
+          <p>Loading puzzle information...</p>
+        </aside>
+      </div>
+    </div>
+
+    <script src="/src/app.js"></script>
+  </body>
+</html>
