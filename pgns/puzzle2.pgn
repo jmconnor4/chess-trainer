@@ -1,0 +1,11 @@
+[Result "*"]
+[Event "CT Problem"]
+[Site "Chesstempo.com"]
+[Date "????.??.??"]
+[Round "-"]
+[White "player"]
+[Black "236967019"]
+[SetUp "1"]
+[FEN "8/6Q1/P7/P5k1/6pp/3q3P/6PK/8 b - - 0 0"]
+
+1...Kh5 1.hxg4# *

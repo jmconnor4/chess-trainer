@@ -1,0 +1,14 @@
+[Result "*"]
+[Event "CT Problem"]
+[Site "Chesstempo.com"]
+[Date "2024.01.15"]
+[Round "-"]
+[White "97988951"]
+[Black "player"]
+[SetUp "1"]
+[FEN "2q3rk/5Q1p/R2p4/3Pb1r1/8/1B2P1P1/PP5P/5RK1 w - - 0 1"]
+[Difficulty "Hard"]
+[Theme "Checkmate, Combination"]
+[Description "Find the forcing sequence that leads to checkmate. White must use precise moves to break through Black's defenses."]
+
+1.Rxd6 Rxg3+ 2.hxg3 Rxg3+ 3.Kf2 Rg2+ 4.Kxg2 Qg4+ 5.Kf2 Bg3+ 6.Kg1 Bf4+ 7.Kf2 Qg3+ 8.Ke2 Qxe3+ 9.Kd1 Qd2# *

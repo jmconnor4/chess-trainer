@@ -1,0 +1,14 @@
+[Event "Fork Tactic"]
+[Site "Chess.com"]
+[Date "2024.05.10"]
+[Round "?"]
+[White "Student"]
+[Black "Computer"]
+[Result "1-0"]
+[SetUp "1"]
+[FEN "r1bq1rk1/ppp2ppp/2np1n2/2b1p3/2B1P3/2NP1N2/PPP2PPP/R1BQK2R w KQ - 0 1"]
+[Difficulty "Easy"]
+[Theme "Fork, Knight Tactics"]
+[Description "White can win material with a classic knight fork. Find the move that attacks two pieces at once."]
+
+1.Ng5 d5 2.exd5 Nxd5 3.Nxf7 Rxf7 4.Bxd5 1-0

@@ -1,0 +1,8 @@
+{
+  "name": "chess-lessons",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "start": "node src/server.js"
+  }
+}
