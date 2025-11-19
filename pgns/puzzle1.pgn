@@ -1,4 +1,3 @@
-[Result "*"]
 [Event "CT Problem"]
 [Site "Chesstempo.com"]
 [Date "2024.01.15"]
@@ -10,5 +9,7 @@
 [Difficulty "Hard"]
 [Theme "Checkmate, Combination"]
 [Description "Find the forcing sequence that leads to checkmate. White must use precise moves to break through Black's defenses."]
+[Hint "Start by looking for a forcing capture that opens up lines. Black's king position is vulnerable despite the material balance."]
+[Objective "Execute a precise tactical sequence to deliver checkmate. Each move must be forcing (check, capture, or threat)."]
 
 1.Rxd6 Rxg3+ 2.hxg3 Rxg3+ 3.Kf2 Rg2+ 4.Kxg2 Qg4+ 5.Kf2 Bg3+ 6.Kg1 Bf4+ 7.Kf2 Qg3+ 8.Ke2 Qxe3+ 9.Kd1 Qd2# *

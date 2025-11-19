@@ -27,6 +27,28 @@ header {
   text-align: center;
 }
 
+header nav {
+  font-size: 0.875rem;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+.breadcrumb-link {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.breadcrumb-link:focus-visible {
+  outline: 3px solid #ffc107;
+  outline-offset: 3px;
+}
+
 header h1 {
   font-size: 2rem;
   font-weight: 600;
@@ -81,8 +103,15 @@ header h1 {
 }
 
 .nav-btn:disabled {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
+  background: #6c757d;
+  box-shadow: none;
+}
+
+.nav-btn:focus-visible {
+  outline: 3px solid #ffc107;
+  outline-offset: 3px;
 }
 
 #puzzle-counter {
@@ -95,7 +124,7 @@ header h1 {
 
 .keyboard-hint {
   text-align: center;
-  color: #6c757d;
+  color: #495057;
   font-size: 13px;
   padding: 8px;
   background: #f8f9fa;
@@ -104,54 +133,171 @@ header h1 {
 }
 
 .info-panel {
-  background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
-  border-left: 2px solid #dee2e6;
-  padding: 32px;
+  background: #ffffff;
+  border-left: 2px solid #e9ecef;
+  padding: 0;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
-.info-panel h2 {
-  color: #2c3e50;
-  font-size: 1.5rem;
-  margin-bottom: 24px;
-  padding-bottom: 12px;
-  border-bottom: 3px solid #667eea;
+/* Puzzle hero section */
+.puzzle-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 32px;
+  color: white;
 }
 
-.info-item {
-  margin-bottom: 16px;
-  padding: 12px;
-  background: white;
-  border-radius: 6px;
-  border-left: 4px solid #667eea;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+.puzzle-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.3;
 }
 
-.info-item strong {
-  display: block;
-  color: #495057;
-  font-size: 12px;
+.difficulty-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 4px;
+  margin-bottom: 16px;
 }
 
-.info-item:not(.description) {
-  font-size: 15px;
+.difficulty-badge.hard {
+  background: rgba(220, 53, 69, 0.2);
+  border-color: rgba(220, 53, 69, 0.4);
+}
+
+.difficulty-badge.medium {
+  background: rgba(255, 193, 7, 0.2);
+  border-color: rgba(255, 193, 7, 0.4);
+}
+
+.difficulty-badge.easy {
+  background: rgba(40, 167, 69, 0.2);
+  border-color: rgba(40, 167, 69, 0.4);
+}
+
+.theme-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.theme-tag {
+  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  font-size: 0.813rem;
+  font-weight: 500;
+}
+
+/* Learning objective section */
+.learning-section {
+  padding: 32px;
+  background: #f8f9fa;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #667eea;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.objective-text {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+/* Hints section - collapsible */
+.hints-section {
+  padding: 24px 32px;
+  background: #fff9e6;
+  border-left: 4px solid #ffc107;
+}
+
+.hint-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  width: 100%;
+  padding: 0;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
   color: #2c3e50;
 }
 
-.info-item.description {
-  border-left-color: #764ba2;
+.hint-toggle:hover {
+  color: #667eea;
 }
 
-.info-item.description p {
-  margin-top: 8px;
-  line-height: 1.6;
+.hint-toggle:focus-visible {
+  outline: 3px solid #ffc107;
+  outline-offset: 3px;
+}
+
+.hint-content {
+  margin-top: 16px;
   color: #495057;
-  font-size: 14px;
+  line-height: 1.6;
+  display: none;
 }
 
+.hint-content.visible {
+  display: block;
+}
+
+/* Metadata section */
+.metadata-section {
+  padding: 24px 32px;
+  flex: 1;
+}
+
+.metadata-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.metadata-item {
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 3px solid #dee2e6;
+}
+
+.metadata-label {
+  font-size: 0.688rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #495057;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.metadata-value {
+  font-size: 0.938rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+/* Legacy styles for backward compatibility */
 .info-item code {
   background: #f1f3f5;
   padding: 2px 6px;
@@ -209,8 +355,179 @@ ct-pgn-viewer {
     font-size: 1.5rem;
   }
 
-  .chess-panel,
-  .info-panel {
+  .chess-panel {
     padding: 20px;
+  }
+
+  .puzzle-hero,
+  .learning-section,
+  .hints-section,
+  .metadata-section {
+    padding: 20px;
+  }
+
+  .metadata-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Welcome Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  padding: 48px;
+  max-width: 700px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+}
+
+.modal-content h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.welcome-steps {
+  display: grid;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.welcome-step {
+  text-align: center;
+  padding: 24px;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+.welcome-step .step-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.welcome-step h3 {
+  font-size: 1.25rem;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.welcome-step p {
+  color: #495057;
+  line-height: 1.6;
+}
+
+.modal-content .cta-button {
+  display: block;
+  width: 100%;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 16px;
+}
+
+.modal-content .cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+}
+
+.modal-content .cta-button:focus-visible {
+  outline: 3px solid #ffc107;
+  outline-offset: 3px;
+}
+
+.dont-show-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: #6c757d;
+  cursor: pointer;
+}
+
+.dont-show-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    padding: 32px 24px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .welcome-steps {
+    gap: 16px;
+  }
+
+  .welcome-step {
+    padding: 16px;
   }
 }

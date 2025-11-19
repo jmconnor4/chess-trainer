@@ -3,9 +3,10 @@ const fs = require('fs');
 const path = require('path');
 
 const PORT = process.env.PORT || 3000;
-const PGNS_DIR = path.join(__dirname, 'pgns');
+const PGNS_DIR = path.join(__dirname, '..', 'pgns');
 
-const server = http.createServer((req, res) => {
+// Export the request handler for testing
+const requestHandler = (req, res) => {
   // Enable CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
 
@@ -54,7 +55,9 @@ const server = http.createServer((req, res) => {
   }
 
   // Serve static files
-  let filePath = path.join(__dirname, req.url === '/' ? 'index.html' : req.url);
+  let filePath = req.url === '/'
+    ? path.join(__dirname, '..', 'index.html')
+    : path.join(__dirname, '..', req.url);
 
   const extname = path.extname(filePath);
   const contentTypeMap = {
@@ -76,8 +79,17 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': contentType });
     res.end(data);
   });
-});
+};
 
-server.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}/`);
-});
+// Create server
+const server = http.createServer(requestHandler);
+
+// Only start server if this file is run directly (not imported)
+if (require.main === module) {
+  server.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}/`);
+  });
+}
+
+// Export for testing
+module.exports = { requestHandler, server, PGNS_DIR };

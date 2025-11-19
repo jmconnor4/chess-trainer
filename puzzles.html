@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#667eea" />
+    <meta
+      name="description"
+      content="Practice chess tactics with curated puzzles from real games. Improve your tactical vision and problem-solving skills."
+    />
+    <title>Chess Puzzle Trainer - Practice Tactics</title>
+    <link href="https://c2a.chesstempo.com/pgnviewer/v2.5/pgnviewerext.vers1.css" media="all" rel="stylesheet" crossorigin>
+    <script defer language="javascript" src="https://c1a.chesstempo.com/pgnviewer/v2.5/pgnviewerext.bundle.vers1.js" crossorigin></script>
+    <link
+      href="https://c1a.chesstempo.com/fonts/MaterialIcons-Regular.woff2"
+      rel="stylesheet" crossorigin>
+    <link href="/styles/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <div class="container">
+      <header>
+        <nav aria-label="Breadcrumb navigation">
+          <a href="/landing.html" class="breadcrumb-link">Home</a> › <span>Puzzle Trainer</span>
+        </nav>
+        <h1>Chess Puzzle Trainer</h1>
+      </header>
+
+      <main id="main-content" class="main-content">
+        <div class="chess-panel">
+          <nav class="navigation" aria-label="Puzzle navigation">
+            <button id="prev-btn" class="nav-btn" aria-label="Go to previous puzzle">← Previous</button>
+            <span id="puzzle-counter" aria-live="polite" aria-atomic="true">Loading...</span>
+            <button id="next-btn" class="nav-btn" aria-label="Go to next puzzle">Next →</button>
+          </nav>
+
+          <ct-pgn-viewer role="application" aria-label="Chess puzzle viewer">
+[Result "*"]
+[Event "Loading..."]
+
+Loading puzzle...
+          </ct-pgn-viewer>
+
+          <div class="keyboard-hint" role="note">
+            Tip: Use ← → arrow keys to navigate
+          </div>
+        </div>
+
+        <aside class="info-panel" id="puzzle-info" aria-label="Puzzle information">
+          <h2>Puzzle Information</h2>
+          <p>Loading puzzle information...</p>
+        </aside>
+      </main>
+    </div>
+
+    <script src="/src/app.js"></script>
+  </body>
+</html>
