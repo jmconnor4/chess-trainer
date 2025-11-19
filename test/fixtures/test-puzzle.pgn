@@ -1,0 +1,14 @@
+[Event "Test Puzzle"]
+[Site "Test"]
+[Date "2024.01.01"]
+[Round "-"]
+[White "TestPlayer1"]
+[Black "TestPlayer2"]
+[SetUp "1"]
+[FEN "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"]
+[Difficulty "Easy"]
+[Theme "Test Theme"]
+[Description "This is a test puzzle for unit testing"]
+[Result "1-0"]
+
+1.e4 e5 2.Nf3 Nc6 3.Bb5 *
